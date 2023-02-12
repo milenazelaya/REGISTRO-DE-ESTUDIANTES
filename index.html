@@ -219,12 +219,8 @@ createApp({
 
                     localStorage.setItem("estudiantes", JSON.stringify(this.estudiantes) );
                     this.nuevoEstudiante();
-
-                    
-
-
                 },
-
+                
                 eliminarEstudiante(estudiante){
                     if( confirm(`Esta seguro de eliminar a ${estudiante.nombre}?`) ){
                         this.accion='eliminar';
@@ -232,6 +228,12 @@ createApp({
                         this.guardarEstudiante();
                     }
                 },
+
+
+               
+
+    
+
 
                 
 
@@ -260,7 +262,7 @@ createApp({
                         .filter(estudiante=>estudiante.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
                 }
             },
-            
+
             created(){
                 this.listarEstudiantes();
             }
