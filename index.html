@@ -214,9 +214,17 @@ createApp({
                         let index = this.estudiantes.findIndex(estudiante=>estudiante.idEstudiante==this.estudiante.idEstudiante);
                         this.estudiantes.splice(index,1);
                     }
+                    
+
+
                     localStorage.setItem("estudiantes", JSON.stringify(this.estudiantes) );
                     this.nuevoDocente();
+
+                    
+
+
                 },
+
                 eliminarEstudiante(estudiante){
                     if( confirm(`Esta seguro de eliminar a ${estudiante.nombre}?`) ){
                         this.accion='eliminar';
@@ -224,6 +232,9 @@ createApp({
                         this.guardarEstudiante();
                     }
                 },
+
+                
+
                 nuevoEstudiante(){
                     this.accion = 'nuevo';
                     this.estudiante.idEstudiante = '';
@@ -237,6 +248,9 @@ createApp({
                     this.estudiante.correo = '';
 
                 },
+
+                
+
                 modificarEstudiante(estudiante){
                     this.accion = 'modificar';
                     this.estudiante = estudiante;
@@ -246,10 +260,24 @@ createApp({
                         .filter(estudiante=>estudiante.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
                 }
             },
+            
             created(){
                 this.listarEstudiantes();
             }
         }).mount('#app');
+
+          
+        
+                
+
     </script>
+                
+    
+                
+        
+
+
+
+
 </body>
 </html>
